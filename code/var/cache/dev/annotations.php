@@ -62,6 +62,10 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
+'App%5CController%5CEditController' => 0,
+'[C]App%5CController%5CEditController' => 1,
+'App%5CController%5CEditController%23index' => 0,
+'[C]App%5CController%5CEditController%23index' => 1,
 'App%5CController%5CIndexController' => 0,
 '[C]App%5CController%5CIndexController' => 1,
 'App%5CController%5CIndexController%23list' => 0,
@@ -560,6 +564,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1680694587,
+1 => 1680859921,
 
 ]];

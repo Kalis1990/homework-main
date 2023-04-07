@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '221b7e2e503736337ab79c6a2d3203253e4228a5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '221b7e2e503736337ab79c6a2d3203253e4228a5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -178,6 +178,15 @@
             'reference' => '25a06c7bf4c6b8218f47928654252863ffc890a5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/sql-formatter',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nikic/php-parser' => array(
+            'pretty_version' => 'v4.15.4',
+            'version' => '4.15.4.0',
+            'reference' => '6bb5176bc4af8bcb7d926f88718db9b96a2d4290',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -430,6 +439,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/maker-bundle' => array(
+            'pretty_version' => 'v1.48.0',
+            'version' => '1.48.0.0',
+            'reference' => '2e428e8432e9879187672fe08f1cc335e2a31dd6',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/maker-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/polyfill-ctype' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -595,6 +613,15 @@
             'reference' => '86062dd0103530e151588c8f60f5b85a139f1442',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/var-exporter',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/webpack-encore-bundle' => array(
+            'pretty_version' => 'v1.16.1',
+            'version' => '1.16.1.0',
+            'reference' => '1862d71e483769b40278548a30e756ce13ef9d4c',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/webpack-encore-bundle',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
