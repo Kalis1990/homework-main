@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -22,6 +23,7 @@ class Article
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
+
 
     /**
      * @return int|null
@@ -44,7 +46,9 @@ class Article
      */
     public function setTitle(?string $title): void
     {
-        $this->title = $title;
+        if (!empty($title)) {
+            $this->title = $title;
+        }
     }
 
     /**
@@ -60,7 +64,9 @@ class Article
      */
     public function setText(?string $text): void
     {
-        $this->text = $text;
+        if (!empty($text)) {
+            $this->text = $text;
+        }
     }
 
     /**
@@ -76,6 +82,9 @@ class Article
      */
     public function setImage(?string $image): void
     {
-        $this->image = $image;
+        if (!empty($image)) {
+            $this->image = $image;
+        }
     }
+
 }
