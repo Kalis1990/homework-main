@@ -101,14 +101,11 @@ class Article
         return $this->image;
     }
 
-    /**
-     * @param string|null $image
-     */
-    public function setImage(?string $image): void
+    public function setImage(?string $image): self
     {
-        if (!empty($image)) {
-            $this->image = $image;
-        }
-    }
+        $this->image = $image;
 
+        return $this;
+    }
 }
+

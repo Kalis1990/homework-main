@@ -34,11 +34,11 @@ class ArticleFormType extends AbstractType
                 'label' => false,
                 'required' => false,
             ])
-            ->add('image', FileType::class, array(
+            ->add('image', FileType::class, [
+                'label' => 'Image (jpg, png, gif)',
                 'required' => false,
-                'mapped' => false
-            ))
-            ;
+                'mapped' => false,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
