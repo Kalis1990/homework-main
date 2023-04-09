@@ -206,6 +206,14 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\IndexController"/>
       </call>
     </service>
+    <service id="App\Controller\ReadingTimeController" class="App\Controller\ReadingTimeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Service\ReadingTimeCalculator"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ReadingTimeController"/>
+      </call>
+    </service>
     <service id="App\Controller\ViewController" class="App\Controller\ViewController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -223,7 +231,14 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Twig\WordCountExtension" class="App\Twig\WordCountExtension" autowire="true" autoconfigure="true"/>
+    <service id="App\Twig\ReadingTimeCalculator" class="App\Twig\ReadingTimeCalculator" autowire="true" autoconfigure="true"/>
+    <service id="App\Twig\ReadingTimeExtension" class="App\Twig\ReadingTimeExtension" autowire="true" autoconfigure="true">
+      <tag name="twig.extension"/>
+      <argument type="service" id="App\Service\ReadingTimeCalculator"/>
+    </service>
+    <service id="App\Service\ReadingTimeCalculator" class="App\Service\ReadingTimeCalculator" autowire="true" autoconfigure="true">
+      <argument type="service" id="slugger"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -1876,6 +1891,9 @@
         <argument type="service" id="twig.extension.form"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="App\Twig\ReadingTimeExtension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.debug"/>
       </call>
       <call method="addExtension">
@@ -3000,6 +3018,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReadingTimeController" class="App\Controller\ReadingTimeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReadingTimeController" class="App\Controller\ReadingTimeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ReadingTimeController" class="App\Controller\ReadingTimeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ViewController" class="App\Controller\ViewController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -3009,6 +3030,8 @@
     <service id=".abstract.instanceof.App\Form\ArticleFormType" class="App\Form\ArticleFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Twig\Extension\ExtensionInterface.0.App\Twig\ReadingTimeExtension" class="App\Twig\ReadingTimeExtension" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Twig\ReadingTimeExtension" class="App\Twig\ReadingTimeExtension" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -3487,6 +3510,12 @@
     <service id=".service_locator.mx0UMmY.App\Controller\IndexController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\IndexController"/>
       <argument>App\Controller\IndexController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ReadingTimeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ReadingTimeController"/>
+      <argument>App\Controller\ReadingTimeController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>

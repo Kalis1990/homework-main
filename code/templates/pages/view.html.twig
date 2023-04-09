@@ -11,9 +11,41 @@
 
                 <img class="img-fluid" src="{{ article.image }}" alt="">
 
-                <div class="lead mb-4 py-5">{{ article.text | raw }}</div>
-             
-                    {# <p class="text-muted">{{ WordCountExtension | article.text) }} words</p> #}
+              
+                
+                {% set reading_time = article.text|reading_time %}
+
+                <div class="lead mb-4 py-5">{{ reading_time }}</div>
+
+                {# <form action="{{ path('app_calculate_reading_time') }}" method="GET">
+                <textarea name="text"></textarea>
+                <button type="submit">Calculate Reading Time</button>
+                </form>
+                <div id="reading-time"></div> #}
+
+                {# // <script> #}
+                {# //     var form = document.querySelector('form');
+                //     var readingTimeElement = document.querySelector('#reading-time');
+
+                //     form.addEventListener('submit', function(event) {
+                //         event.preventDefault();
+
+                //         var xhr = new XMLHttpRequest();
+
+                //         xhr.onreadystatechange = function() {
+                //             if (xhr.readyState === XMLHttpRequest.DONE) {
+                //                 if (xhr.status === 200) {
+                //                     readingTimeElement.innerText = xhr.responseText;
+                //                 }
+                //             }
+                //         };
+
+                //         xhr.open('GET', form.action + '?text=' + encodeURIComponent(form.elements.text.value));
+                //         xhr.send();
+                //     }); #}
+                {# // </script> #}
+
+
                   
 
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">

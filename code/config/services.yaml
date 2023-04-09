@@ -19,7 +19,17 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
-            # - '..src/Twig/WordCountExtension.php'
+ 
+    App\Service\ReadingTimeCalculator:
+        arguments: ['@slugger']
+
+    App\Twig\ReadingTimeExtension:
+        arguments: ['@App\Service\ReadingTimeCalculator']
+        tags: ['twig.extension']
+
+    # app_calculate_reading_time:
+    #     path: '/calculate-reading-time'
+    #     controller: 'App\Controller\ReadingTimeController::calculateReadingTime'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
