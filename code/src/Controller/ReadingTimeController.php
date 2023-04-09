@@ -4,24 +4,19 @@ namespace App\Controller;
 
 use App\Service\ReadingTimeCalculator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 
 class ReadingTimeController extends AbstractController
 {
-    private $readingTimeCalculator;
-
-    public function __construct(ReadingTimeCalculator $readingTimeCalculator)
+    public function view(ReadingTimeCalculator $readingTimeCalculator): Response
     {
-        $this->readingTimeCalculator = $readingTimeCalculator;
-    }
+        $text = 'This is a sample article.';
+        $readingTime = $readingTimeCalculator->calculate($text);
 
-    public function calculateReadingTime(Request $request)
-    {
-        $text = $request->query->get('text');
-
-        $reading_time = $this->readingTimeCalculator->calculateReadingTime($text);
-
-        return new Response($reading_time . ' min');
+        return $this->render('article/view.html.twig', [
+            'text' => $text,
+            'readingTime' => $readingTime,
+        ]);
     }
 }

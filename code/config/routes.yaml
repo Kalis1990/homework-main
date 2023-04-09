@@ -1,0 +1,5 @@
+app_article_view:
+  path: /article/{slug}
+  controller: App\Controller\ReadingTimeController::view
+  requirements:
+    slug: '[a-zA-Z0-9-]+'

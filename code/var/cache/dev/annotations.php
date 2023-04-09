@@ -74,6 +74,10 @@ return [[
 '[C]App%5CController%5CIndexController' => 1,
 'App%5CController%5CIndexController%23list' => 0,
 '[C]App%5CController%5CIndexController%23list' => 1,
+'App%5CController%5CReadingTimeController' => 0,
+'[C]App%5CController%5CReadingTimeController' => 1,
+'App%5CController%5CReadingTimeController%23view' => 0,
+'[C]App%5CController%5CReadingTimeController%23view' => 1,
 'App%5CController%5CViewController' => 0,
 '[C]App%5CController%5CViewController' => 1,
 'App%5CController%5CViewController%23view' => 0,
@@ -90,6 +94,10 @@ return [[
 '[C]App%5CEntity%5CArticle%23getText' => 1,
 'App%5CEntity%5CArticle%23setText' => 0,
 '[C]App%5CEntity%5CArticle%23setText' => 1,
+'App%5CEntity%5CArticle%23getReadingTime' => 0,
+'[C]App%5CEntity%5CArticle%23getReadingTime' => 1,
+'App%5CEntity%5CArticle%23setReadingTime' => 0,
+'[C]App%5CEntity%5CArticle%23setReadingTime' => 1,
 'App%5CEntity%5CArticle%23getImage' => 0,
 '[C]App%5CEntity%5CArticle%23getImage' => 1,
 'App%5CEntity%5CArticle%23setImage' => 0,
@@ -100,6 +108,8 @@ return [[
 '[C]App%5CEntity%5CArticle%24title' => 1,
 'App%5CEntity%5CArticle%24text' => 0,
 '[C]App%5CEntity%5CArticle%24text' => 1,
+'App%5CEntity%5CArticle%24readingTime' => 0,
+'[C]App%5CEntity%5CArticle%24readingTime' => 1,
 'App%5CEntity%5CArticle%24image' => 0,
 '[C]App%5CEntity%5CArticle%24image' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
@@ -568,6 +578,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1681035837,
+1 => 1681077355,
 
 ]];

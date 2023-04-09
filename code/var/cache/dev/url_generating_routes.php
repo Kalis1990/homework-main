@@ -7,4 +7,5 @@ return [
     'home' => [[], ['_controller' => 'App\\Controller\\IndexController::list'], [], [['text', '/']], [], [], []],
     'article_view' => [['id'], ['_controller' => 'App\\Controller\\ViewController::view'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/view/article']], [], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
+    'app_article_view' => [['slug'], ['_controller' => 'App\\Controller\\ReadingTimeController::view'], ['slug' => '[a-zA-Z0-9-]+'], [['variable', '/', '[a-zA-Z0-9-]+', 'slug', true], ['text', '/article']], [], [], []],
 ];

@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use DateTime;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -20,6 +19,9 @@ class Article
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $text = null;
+
+    #[ORM\Column]
+    private ?int $readingTime;
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
@@ -62,12 +64,34 @@ class Article
     /**
      * @param string|null $text
      */
-    public function setText(?string $text): void
+    public function setText(string $text): self
     {
-        if (!empty($text)) {
-            $this->text = $text;
-        }
+        $this->text = $text;
+
+        // calculate and set the reading time
+        $words = str_word_count(strip_tags($this->text), 1);
+        $filteredWords = array_filter($words, function ($word) {
+            return mb_strlen($word) > 3;
+        });
+        $wordCount = count($filteredWords);
+        $readingTime = ceil($wordCount / 200);
+        $this->setReadingTime($readingTime);
+
+        return $this;
     }
+
+    public function getReadingTime(): ?int
+    {
+        return $this->readingTime;
+    }
+
+    public function setReadingTime(int $readingTime): self
+    {
+        $this->readingTime = $readingTime;
+
+        return $this;
+    }
+
 
     /**
      * @return string|null

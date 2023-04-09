@@ -21,7 +21,8 @@ final class Version20230322134042 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE article (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, title VARCHAR(255) NOT NULL, text CLOB NOT NULL, image VARCHAR(255) NOT NULL)');
-    }
+        $this->addSql('ALTER TABLE article ADD reading_time INT DEFAULT NULL');
+    }   
 
     public function down(Schema $schema): void
     {
