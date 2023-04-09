@@ -12,6 +12,9 @@
                 <img class="img-fluid" src="{{ article.image }}" alt="">
 
                 <div class="lead mb-4 py-5">{{ article.text | raw }}</div>
+             
+                    {# <p class="text-muted">{{ WordCountExtension | article.text) }} words</p> #}
+                  
 
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     <a href="{{ path('home') }}" type="button" class="btn btn-secondary btn-lg px-4 gap-3">Back</a>

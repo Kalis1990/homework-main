@@ -33,8 +33,8 @@ class EditController extends AbstractController
         $image = $form->get('image')->getData();
     
         if ($form->isSubmitted() && $form->isValid()) {
-            $editedArticle = $form->getData();
-            $entityManager->persist($editedArticle);
+            $article = $form->getData();
+            $entityManager->persist($article);
             $entityManager->flush();
             return $this->redirectToRoute('home');
         }else{

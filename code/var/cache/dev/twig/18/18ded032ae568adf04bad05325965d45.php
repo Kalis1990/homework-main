@@ -76,10 +76,14 @@ class __TwigTemplate_f809e50d9fc4a809d9132f6b27545a36 extends Template
         // line 14
         echo twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 14, $this->source); })()), "text", [], "any", false, false, false, 14);
         echo "</div>
+             
+                    ";
+        // line 17
+        echo "                  
 
                 <div class=\"d-grid gap-2 d-sm-flex justify-content-sm-center\">
                     <a href=\"";
-        // line 17
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\" type=\"button\" class=\"btn btn-secondary btn-lg px-4 gap-3\">Back</a>
                 </div>
@@ -104,7 +108,7 @@ class __TwigTemplate_f809e50d9fc4a809d9132f6b27545a36 extends Template
 
     public function getDebugInfo()
     {
-        return array (  83 => 17,  77 => 14,  72 => 12,  65 => 8,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  87 => 20,  82 => 17,  77 => 14,  72 => 12,  65 => 8,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -123,6 +127,9 @@ class __TwigTemplate_f809e50d9fc4a809d9132f6b27545a36 extends Template
                 <img class=\"img-fluid\" src=\"{{ article.image }}\" alt=\"\">
 
                 <div class=\"lead mb-4 py-5\">{{ article.text | raw }}</div>
+             
+                    {# <p class=\"text-muted\">{{ WordCountExtension | article.text) }} words</p> #}
+                  
 
                 <div class=\"d-grid gap-2 d-sm-flex justify-content-sm-center\">
                     <a href=\"{{ path('home') }}\" type=\"button\" class=\"btn btn-secondary btn-lg px-4 gap-3\">Back</a>

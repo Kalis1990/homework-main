@@ -64,8 +64,12 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
 'App%5CController%5CEditController' => 0,
 '[C]App%5CController%5CEditController' => 1,
+'App%5CController%5CEditController%23__construct' => 0,
+'[C]App%5CController%5CEditController%23__construct' => 1,
 'App%5CController%5CEditController%23edit' => 0,
 '[C]App%5CController%5CEditController%23edit' => 1,
+'App%5CController%5CEditController%24ea' => 0,
+'[C]App%5CController%5CEditController%24ea' => 1,
 'App%5CController%5CIndexController' => 0,
 '[C]App%5CController%5CIndexController' => 1,
 'App%5CController%5CIndexController%23list' => 0,
@@ -90,10 +94,6 @@ return [[
 '[C]App%5CEntity%5CArticle%23getImage' => 1,
 'App%5CEntity%5CArticle%23setImage' => 0,
 '[C]App%5CEntity%5CArticle%23setImage' => 1,
-'App%5CEntity%5CArticle%23getUpdatedAt' => 0,
-'[C]App%5CEntity%5CArticle%23getUpdatedAt' => 1,
-'App%5CEntity%5CArticle%23setUpdatedAt' => 0,
-'[C]App%5CEntity%5CArticle%23setUpdatedAt' => 1,
 'App%5CEntity%5CArticle%24id' => 0,
 '[C]App%5CEntity%5CArticle%24id' => 1,
 'App%5CEntity%5CArticle%24title' => 0,
@@ -102,8 +102,6 @@ return [[
 '[C]App%5CEntity%5CArticle%24text' => 1,
 'App%5CEntity%5CArticle%24image' => 0,
 '[C]App%5CEntity%5CArticle%24image' => 1,
-'App%5CEntity%5CArticle%24updated_at' => 0,
-'[C]App%5CEntity%5CArticle%24updated_at' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -570,6 +568,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1680989870,
+1 => 1680998966,
 
 ]];
